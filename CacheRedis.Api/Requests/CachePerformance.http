@@ -1,0 +1,43 @@
+@CacheRedis.Api_HostAddress = http://localhost:5000
+
+### Yoðun Ürün Listesi Çaðýrma (Cache Performans Testi)
+# Bu istekler, cache mekanizmasýnýn performansýný ve davranýþýný test eder
+GET http://localhost:5000/products
+Content-Type: application/json
+
+### Hýzlý Ardýþýk Ýstekler
+GET http://localhost:5000/products
+Content-Type: application/json
+
+###
+GET http://localhost:5000/products
+Content-Type: application/json
+
+###
+GET http://localhost:5000/products
+Content-Type: application/json
+
+### Farklý Ürün ID'leri ile Test
+GET http://localhost:5000/product/1
+Content-Type: application/json
+
+###
+GET http://localhost:5000/product/2
+Content-Type: application/json
+###
+GET http://localhost:5000/product/3
+Content-Type: application/json
+
+### Kullanýcý Profili Çoklu Ýstek
+GET http://localhost:5000/user/john_doe
+Content-Type: application/json
+###
+GET http://localhost:5000/user/john_doe
+Content-Type: application/json
+
+### Karmaþýk Veri Çaðýrma Testi
+GET http://localhost:5000/complex-data
+Content-Type: application/json
+###
+GET http://localhost:5000/complex-data
+Content-Type: application/json

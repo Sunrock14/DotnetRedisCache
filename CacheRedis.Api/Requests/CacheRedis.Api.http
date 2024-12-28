@@ -1,0 +1,47 @@
+@CacheRedis.Api_HostAddress = http://localhost:5000
+
+### Ürün Listesini Getirme
+GET http://localhost:5000/products
+Content-Type: application/json
+
+### Belirli Bir Ürünü ID ile Getirme
+GET http://localhost:5000/product/1
+Content-Type: application/json
+
+### Yeni Ürün Ekleme
+POST http://localhost:5000/product
+Content-Type: application/json
+
+{
+    "id": 0,
+    "name": "Wireless Headphones",
+    "price": 129.99
+}
+
+### Kullanýcý Profili Getirme
+GET http://localhost:5000/user/john_doe
+Content-Type: application/json
+
+### Karmaþýk Veri Getirme
+GET http://localhost:5000/complex-data
+Content-Type: application/json
+
+### Ürün Önbelleðini Temizleme
+DELETE http://localhost:5000/clear-product-cache
+Content-Type: application/json
+
+### Performans Testi - Tekrarlý Ýstekler
+# Bu istekler, cache mekanizmasýnýn performansýný test etmek için kullanýlabilir
+GET http://localhost:5000/products
+Content-Type: application/json
+###
+GET http://localhost:5000/products
+Content-Type: application/json
+
+###
+GET http://localhost:5000/product/2
+Content-Type: application/json
+
+###
+GET http://localhost:5000/product/2
+Content-Type: application/json
